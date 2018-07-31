@@ -31,7 +31,7 @@ if (!is_null($events['events'])) {
 			$profile = json_decode($jprofile, true);
 			
 			
-			$text = $event['message']['text'];
+			$text = $profile['displayName'];
 			
 			/*$client = new nusoap_client("http://tab.massmarketing.co.th/ws/ws_saleswork.php?wsdl",true);
 			$params = array(
