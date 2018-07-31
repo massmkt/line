@@ -30,17 +30,14 @@ if (!is_null($events['events'])) {
 			curl_close($ch);
 			$profile = json_decode($jprofile, true);
 			
-			
-			$text = $profile['displayName'];
-			
-			/*$client = new nusoap_client("http://tab.massmarketing.co.th/ws/ws_saleswork.php?wsdl",true);
+			$client = new nusoap_client("http://tab.massmarketing.co.th/ws/ws_saleswork.php?wsdl",true);
 			$params = array(
 				'msg' => $event['message']['text'],
 				'uid' => $event['source']['userId'],
 				'uname' => $profile['displayName'],
 				'upic' => $profile['pictureUrl']
 			);
-			$text = $client->call("MM_SalesWork",$params);*/
+			$text = $client->call("MM_SalesWork",$params);
 		} else if($event['source']['userId'] == 'U8e3cfaad38856c3d02394cd6c66cad84'){
 			$text = $event['source']['groupId'];
 		}
