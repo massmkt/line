@@ -16,12 +16,11 @@ if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
-		$text = $event['source']['userId'];
-		/*if ($event['type'] == 'message' && $event['message']['type'] == 'text' && ($event['source']['groupId'] == 'C8365e7d5e8cde7297ea917354127494d' || $event['source']['groupId'] == 'C1d73dd138a9ab736a4f53be0ffcd4c3b')) {
+		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && ($event['source']['groupId'] == 'C8365e7d5e8cde7297ea917354127494d' || $event['source']['groupId'] == 'C1d73dd138a9ab736a4f53be0ffcd4c3b')) {
 			// Get text sent
-			//$text = $event['source']['userId'];
+			$text = "OK";
 			
-			$url = 'https://api.line.me/v2/bot/profile/'.$event['source']['userId'];
+			/*$url = 'https://api.line.me/v2/bot/profile/'.$event['source']['userId'];
 			$headers = array('Authorization: Bearer ' . $access_token);
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -38,10 +37,10 @@ if (!is_null($events['events'])) {
 				'uname' => $profile['displayName'],
 				'upic' => $profile['pictureUrl']
 			);
-			$text = $client->call("MM_SalesWork",$params);
+			$text = $client->call("MM_SalesWork",$params);*/
 		} else if($event['source']['userId'] == 'U8e3cfaad38856c3d02394cd6c66cad84'){
 			$text = $event['source']['groupId'];
-		}*/
+		}
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
