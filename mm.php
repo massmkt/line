@@ -1,7 +1,7 @@
 <?php // callback.php
 
-require "vendor/autoload.php";
-require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
+require "line/autoload.php";
+require_once('line/LINEBotTiny.php');
 require_once('lib/nusoap.php');
 
 $access_token = 'Gsga6ROKCgOSFJaAZNlhKpcZiiTlXg71ziuQeIpsBQDdzmka1PE+CLfQM3M7RUOanLsBWzc6GYV0uy6Tp2w0MslevePx9+fPTAir1gUckZUGpMD19lZPadhlv0LoOVppO8z6WXHtS9oSYiRcZp7gZgdB04t89/1O/w1cDnyilFU=';
@@ -18,7 +18,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text' && ($event['source']['groupId'] == 'C8365e7d5e8cde7297ea917354127494d' || $event['source']['groupId'] == 'C1d73dd138a9ab736a4f53be0ffcd4c3b')) {
 			// Get text sent
-			$text = "OK";
+			$text = $event['source']['userId'];
 			
 			/*$url = 'https://api.line.me/v2/bot/profile/'.$event['source']['userId'];
 			$headers = array('Authorization: Bearer ' . $access_token);
